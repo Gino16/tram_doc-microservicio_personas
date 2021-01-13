@@ -5,8 +5,10 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.ComponentScan;
 
+@EnableEurekaClient
 @SpringBootApplication
 @EntityScan("com.tramite_documentario.microservicio.backend.commonpersonas.models.entity")
 public class MicroservicioPersonasApplication {

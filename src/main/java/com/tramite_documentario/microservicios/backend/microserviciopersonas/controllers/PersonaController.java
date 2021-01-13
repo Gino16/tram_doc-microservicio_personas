@@ -4,6 +4,7 @@ package com.tramite_documentario.microservicios.backend.microserviciopersonas.co
 import com.tramite_documentario.microservicio.backend.commonmicroservicios.controllers.CommonController;
 import com.tramite_documentario.microservicio.backend.commonmicroservicios.services.CommonService;
 import com.tramite_documentario.microservicio.backend.commonpersonas.models.entity.Persona;
+import com.tramite_documentario.microservicios.backend.microserviciopersonas.services.PersonaService;
 import com.tramite_documentario.microservicios.backend.microserviciopersonas.services.PuestoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,7 @@ import java.util.Optional;
 
 @CrossOrigin({"*"})
 @RestController
-public class PersonaController extends CommonController<Persona, CommonService<Persona>> {
+public class PersonaController extends CommonController<Persona, PersonaService> {
 
     @Autowired
     private PuestoServiceImpl puestoService;
