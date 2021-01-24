@@ -44,5 +44,14 @@ public class PersonaController extends CommonController<Persona, PersonaService>
     public ResponseEntity<?> listarPuestos(){
         return ResponseEntity.ok().body(puestoService.findAll());
     }
-    
+
+    @GetMapping("/buscar-por-dni/{dniRuc}")
+    public ResponseEntity<?> findPersonasByDni(@PathVariable String dniRuc){
+        return ResponseEntity.ok(this.service.findByDniRuc(dniRuc));
+    }
+
+    @GetMapping("/buscar-por-codEstudiante/{codEstudiante}")
+    public ResponseEntity<?> findPersonasByCodEstudiante(@PathVariable String codEstudiante){
+        return ResponseEntity.ok(this.service.findByCodEstudiante(codEstudiante));
+    }
 }
