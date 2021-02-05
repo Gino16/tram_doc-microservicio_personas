@@ -54,4 +54,11 @@ public class PersonaController extends CommonController<Persona, PersonaService>
     public ResponseEntity<?> findPersonasByCodEstudiante(@PathVariable String codEstudiante){
         return ResponseEntity.ok(this.service.findByCodEstudiante(codEstudiante));
     }
+
+    @GetMapping("/buscar-por-email/{correo}")
+    public ResponseEntity<?> findPersonaByCorreo(@PathVariable String correo){
+        Persona persona = this.service.findByCorreo(correo);
+
+        return persona != null ? ResponseEntity.ok(persona) : ResponseEntity.notFound().build();
+    }
 }

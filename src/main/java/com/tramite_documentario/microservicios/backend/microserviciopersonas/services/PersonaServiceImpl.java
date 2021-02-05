@@ -23,4 +23,9 @@ public class PersonaServiceImpl extends CommonServiceImpl<Persona, PersonaReposi
     public List<Persona> findByCodEstudiante(String codEstudiante) {
         return this.repository.findByCodEstudiante(codEstudiante);
     }
+
+    @Transactional
+    public Persona findByCorreo(String correo){
+        return this.repository.findByCorreo(correo);
+    }
 }

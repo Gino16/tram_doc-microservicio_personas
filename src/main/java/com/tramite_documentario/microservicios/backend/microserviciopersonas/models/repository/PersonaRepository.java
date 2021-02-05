@@ -17,4 +17,7 @@ public interface PersonaRepository extends PagingAndSortingRepository<Persona, L
     @Query("select p from Persona p where p.codEstudiante like %?1%")
     public List<Persona> findByCodEstudiante(String codEstudiante);
 
+    @Query("select p from Persona p where p.correo like ?1")
+    public Persona findByCorreo(String correo);
+
 }
