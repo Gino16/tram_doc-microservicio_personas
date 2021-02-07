@@ -2,7 +2,6 @@ package com.tramite_documentario.microservicios.backend.microserviciopersonas.co
 
 
 import com.tramite_documentario.microservicio.backend.commonmicroservicios.controllers.CommonController;
-import com.tramite_documentario.microservicio.backend.commonmicroservicios.services.CommonService;
 import com.tramite_documentario.microservicio.backend.commonpersonas.models.entity.Persona;
 import com.tramite_documentario.microservicios.backend.microserviciopersonas.services.PersonaService;
 import com.tramite_documentario.microservicios.backend.microserviciopersonas.services.PuestoServiceImpl;
