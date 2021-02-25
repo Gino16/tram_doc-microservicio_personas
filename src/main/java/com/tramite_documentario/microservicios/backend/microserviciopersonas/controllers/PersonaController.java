@@ -60,4 +60,15 @@ public class PersonaController extends CommonController<Persona, PersonaService>
 
         return persona != null ? ResponseEntity.ok(persona) : ResponseEntity.notFound().build();
     }
+
+    @GetMapping("/buscar-por-nombre/{nombre}")
+    public ResponseEntity<?> findPersonasByNombre(@PathVariable String nombre){
+        return ResponseEntity.ok(this.service.findByNombre(nombre));
+    }
+
+
+    @GetMapping("/buscar-por-apellido/{apellido}")
+    public ResponseEntity<?> findPersonasByApellidos(@PathVariable String apellido){
+        return ResponseEntity.ok(this.service.findByApellidos(apellido));
+    }
 }

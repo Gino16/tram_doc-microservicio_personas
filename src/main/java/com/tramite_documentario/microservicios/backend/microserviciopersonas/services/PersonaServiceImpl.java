@@ -28,4 +28,16 @@ public class PersonaServiceImpl extends CommonServiceImpl<Persona, PersonaReposi
     public Persona findByCorreo(String correo){
         return this.repository.findByCorreo(correo);
     }
+
+    @Override
+    @Transactional
+    public Persona findByNombre(String nombre) {
+        return this.repository.findByNombre(nombre);
+    }
+
+    @Override
+    @Transactional
+    public Persona findByApellidos(String apellidos) {
+        return this.repository.findByApellidos(apellidos);
+    }
 }
