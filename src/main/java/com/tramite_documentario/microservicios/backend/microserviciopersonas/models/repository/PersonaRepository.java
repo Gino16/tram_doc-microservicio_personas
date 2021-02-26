@@ -23,7 +23,7 @@ public interface PersonaRepository extends PagingAndSortingRepository<Persona, L
     @Query("select p from Persona p where p.nombre like %?1%")
     public Persona findByNombre(String nombre);
 
-    @Query("select p from Persona p where p.apellidos like ?%1?")
+    @Query("select p from Persona p where p.apellidos like %?1%")
     public Persona findByApellidos(String apellidos);
 
 }
