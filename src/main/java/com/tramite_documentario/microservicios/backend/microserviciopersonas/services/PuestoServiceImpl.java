@@ -7,4 +7,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PuestoServiceImpl extends CommonServiceImpl<Puesto, PuestoRepository> implements PuestoService{
+    @Override
+    public Puesto findByNombre(String nombre) {
+        return this.repository.findByNombre(nombre);
+    }
 }

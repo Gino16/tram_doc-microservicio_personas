@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 
 public interface PuestoRepository extends PagingAndSortingRepository<Puesto, Long> {
+    public Puesto findByNombre(String nombre);
 }

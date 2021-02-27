@@ -4,4 +4,5 @@ import com.tramite_documentario.microservicio.backend.commonmicroservicios.servi
 import com.tramite_documentario.microservicio.backend.commonpersonas.models.entity.Puesto;
 
 public interface PuestoService extends CommonService<Puesto> {
+    public Puesto findByNombre(String nombre);
 }

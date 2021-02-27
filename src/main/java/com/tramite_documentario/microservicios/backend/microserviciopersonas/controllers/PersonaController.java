@@ -50,8 +50,8 @@ public class PersonaController extends CommonController<Persona, PersonaService>
     @GetMapping("/puestos-registro")
     public ResponseEntity<?> listarPuestosRegistro(){
         List<Puesto> puestos = new ArrayList<>();
-        puestos.add(puestoService.findById(1L).get());
-        puestos.add(puestoService.findById(2L).get());
+        puestos.add(puestoService.findByNombre("Estudiante"));
+        puestos.add(puestoService.findByNombre("Empresa"));
         return ResponseEntity.ok().body(puestos);
     }
 
