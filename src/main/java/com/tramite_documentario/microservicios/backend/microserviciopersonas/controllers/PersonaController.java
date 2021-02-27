@@ -3,6 +3,7 @@ package com.tramite_documentario.microservicios.backend.microserviciopersonas.co
 
 import com.tramite_documentario.microservicio.backend.commonmicroservicios.controllers.CommonController;
 import com.tramite_documentario.microservicio.backend.commonpersonas.models.entity.Persona;
+import com.tramite_documentario.microservicio.backend.commonpersonas.models.entity.Puesto;
 import com.tramite_documentario.microservicios.backend.microserviciopersonas.services.PersonaService;
 import com.tramite_documentario.microservicios.backend.microserviciopersonas.services.PuestoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 //@CrossOrigin({"*"})
@@ -42,6 +45,14 @@ public class PersonaController extends CommonController<Persona, PersonaService>
     @GetMapping("/puestos")
     public ResponseEntity<?> listarPuestos(){
         return ResponseEntity.ok().body(puestoService.findAll());
+    }
+
+    @GetMapping("/puestos-registro")
+    public ResponseEntity<?> listarPuestosRegistro(){
+        List<Puesto> puestos = new ArrayList<>();
+        puestos.add(puestoService.findById(1L).get());
+        puestos.add(puestoService.findById(2L).get());
+        return ResponseEntity.ok().body(puestos);
     }
 
     @GetMapping("/buscar-por-dni/{dniRuc}")
