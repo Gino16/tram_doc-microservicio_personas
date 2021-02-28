@@ -19,6 +19,11 @@ public class PersonaServiceImpl extends CommonServiceImpl<Persona, PersonaReposi
     }
 
     @Override
+    public Persona findOneByDniRuc(String dni) {
+        return this.repository.findOneByDniRuc(dni);
+    }
+
+    @Override
     @Transactional(readOnly = true)
     public List<Persona> findByCodEstudiante(String codEstudiante) {
         return this.repository.findByCodEstudiante(codEstudiante);

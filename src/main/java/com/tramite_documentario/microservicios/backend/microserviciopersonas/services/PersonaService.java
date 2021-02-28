@@ -9,6 +9,8 @@ import java.util.List;
 public interface PersonaService extends CommonService<Persona> {
     public List<Persona> findByDniRuc(String dni);
 
+    public Persona findOneByDniRuc(String dni);
+
     public List<Persona> findByCodEstudiante(String codEstudiante);
 
     public Persona findByCorreo(String correo);
